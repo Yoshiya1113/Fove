@@ -6,9 +6,11 @@ public class TunneringMouseControler : MonoBehaviour {
 
     public Material plane;//マテリアルの変数
     public Vector2 pos;//位置の変数
+    private int tf = 0;//spaceコントロール用
+    private float tsize = 3.3F;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -22,7 +24,23 @@ public class TunneringMouseControler : MonoBehaviour {
 
         plane.SetFloat("_UX", pos.x);//マウスのx座標をシェーダーのx座標に代入
         plane.SetFloat("_VY", pos.y);//マウスのy座標をシェーダーのx座標に代入
+        plane.SetFloat("_Size", tsize);//トンネリングの円のサイズを設定
 
-        Debug.Log("Pos" + pos);
+        //Debug.Log("Pos" + pos);
+        //Debug.Log("Pos(" + pos.x + "," + pos.y + ")");
+
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            tf += 1;
+            tsize -= 0.1F;
+        }
+
+        if (tf == 20)
+        {
+            tf = 0;
+            tsize = 3.3F;
+        }
+        Debug.Log("tf&tsize(" + tf + "," + tsize + ")");
     }
 }

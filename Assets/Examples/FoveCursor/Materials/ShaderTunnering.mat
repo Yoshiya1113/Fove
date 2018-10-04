@@ -20,8 +20,8 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - _Cutoff: 0.5
-    - _UX: -1.0129771
-    - _VY: 2.5861537
+    - _UX: -0.000253272
+    - _VY: -0.008785036
     - _scale: 3.1
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 1}

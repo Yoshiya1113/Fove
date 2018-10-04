@@ -34,7 +34,7 @@ public class TunneringEyeControler : MonoBehaviour {
                     tunpos = eyepos / new Vector2(Screen.width, Screen.height);
                     //マウスの座標をシェーダーに代入するために値を調整
                     //1～0で表現するためにスクリーンの大きさで割る
-                    //tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
+                    tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
                     plane.SetFloat("_UX", tunpos.x);//マウスのx座標をシェーダーのx座標に代入
                     plane.SetFloat("_VY", tunpos.y);//マウスのy座標をシェーダーのx座標に代入
                 }
@@ -46,7 +46,7 @@ public class TunneringEyeControler : MonoBehaviour {
                     tunpos = eyepos / new Vector2(Screen.width, Screen.height);
                     //マウスの座標をシェーダーに代入するために値を調整
                     //1～0で表現するためにスクリーンの大きさで割る
-                    //tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
+                    tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
                     plane.SetFloat("_UX", tunpos.x);//マウスのx座標をシェーダーのx座標に代入
                     plane.SetFloat("_VY", tunpos.y);//マウスのy座標をシェーダーのx座標に代入
                 }
@@ -63,7 +63,7 @@ public class TunneringEyeControler : MonoBehaviour {
                     tunpos = eyepos / new Vector2(Screen.width, Screen.height);
                     //マウスの座標をシェーダーに代入するために値を調整
                     //1～0で表現するためにスクリーンの大きさで割る
-                    //tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
+                    tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
                     plane.SetFloat("_UX", tunpos.x);//マウスのx座標をシェーダーのx座標に代入
                     plane.SetFloat("_VY", tunpos.y);//マウスのy座標をシェーダーのx座標に代入
                 }
@@ -75,7 +75,7 @@ public class TunneringEyeControler : MonoBehaviour {
                     tunpos = eyepos / new Vector2(Screen.width, Screen.height);
                     //マウスの座標をシェーダーに代入するために値を調整
                     //1～0で表現するためにスクリーンの大きさで割る
-                    //tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
+                    tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
                     plane.SetFloat("_UX", tunpos.x);//マウスのx座標をシェーダーのx座標に代入
                     plane.SetFloat("_VY", tunpos.y);//マウスのy座標をシェーダーのx座標に代入
                 }
@@ -91,7 +91,7 @@ public class TunneringEyeControler : MonoBehaviour {
                     tunpos = eyepos / new Vector2(Screen.width, Screen.height);
                     //マウスの座標をシェーダーに代入するために値を調整
                     //1～0で表現するためにスクリーンの大きさで割る
-                    //tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
+                    tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
                     plane.SetFloat("_UX", tunpos.x);//マウスのx座標をシェーダーのx座標に代入
                     plane.SetFloat("_VY", tunpos.y);//マウスのy座標をシェーダーのx座標に代入
                 }
@@ -103,14 +103,15 @@ public class TunneringEyeControler : MonoBehaviour {
                     tunpos = eyepos / new Vector2(Screen.width, Screen.height);
                     //マウスの座標をシェーダーに代入するために値を調整
                     //1～0で表現するためにスクリーンの大きさで割る
-                    //tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
+                    tunpos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
                     plane.SetFloat("_UX", tunpos.x);//マウスのx座標をシェーダーのx座標に代入
                     plane.SetFloat("_VY", tunpos.y);//マウスのy座標をシェーダーのx座標に代入
                 }
                 break;
         }
 
-        Debug.Log("Eyepos" + eyepos);
-        Debug.Log("Tunpos" + tunpos);
+        //Debug.Log("Eyepos" + eyepos);
+        //Debug.Log("Tunpos" + tunpos);
+        //Debug.Log("Pos(" + pos.x + "," + pos.y + ")");
     }
 }
