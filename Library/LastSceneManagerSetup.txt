@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Examples/FoveCursor/Scenes/FoveCursorTunnering.unity
+  isLoaded: 1
+  isActive: 1

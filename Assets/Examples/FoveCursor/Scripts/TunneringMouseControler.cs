@@ -18,6 +18,9 @@ public class TunneringMouseControler : MonoBehaviour {
 	void Update () {
         var mousemove = Input.mousePosition;//マウスの座標の取得
         pos = mousemove / new Vector2(Screen.width, Screen.height);
+        Debug.Log("Mousemove" + mousemove);
+        //Debug.Log("FirstPos" + pos);
+        Debug.Log("FirstPos(" + pos.x + "," + pos.y + ")");
         //マウスの座標をシェーダーに代入するために値を調整
         //1～0で表現するためにスクリーンの大きさで割る
         pos -= new Vector2(0.5f, 0.5f);//中心座標のずれを修正
@@ -27,20 +30,20 @@ public class TunneringMouseControler : MonoBehaviour {
         plane.SetFloat("_Size", tsize);//トンネリングの円のサイズを設定
 
         //Debug.Log("Pos" + pos);
-        //Debug.Log("Pos(" + pos.x + "," + pos.y + ")");
+        Debug.Log("Pos(" + pos.x + "," + pos.y + ")");
 
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))//Bを押すとトンネリングのサイズが大きくなる
         {
             tf += 1;
             tsize -= 0.1F;
         }
 
-        if (tf == 20)
+        if (tf == 20)//一定回数以上大きくするともとにもどる
         {
             tf = 0;
             tsize = 3.3F;
         }
-        Debug.Log("tf&tsize(" + tf + "," + tsize + ")");
+        //Debug.Log("tf&tsize(" + tf + "," + tsize + ")");
     }
 }

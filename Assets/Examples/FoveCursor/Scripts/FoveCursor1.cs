@@ -27,7 +27,11 @@ public class FoveCursor1 : MonoBehaviour {
                 {
                     transform.position = eyes.left.GetPoint(3.0f) + ((eyes.right.GetPoint(3.0f) - eyes.left.GetPoint(3.0f)) / 2);
                 }
-
+                /*Debug.Log("NotWink");
+                Debug.Log("Right:" + eyes.right);
+                Debug.Log("Hit_R:" + hitRight.point);
+                Debug.Log("Left:" + eyes.left);
+                Debug.Log("Hit_L" + hitLeft.point);*/
                 break;
             case Fove.EFVR_Eye.Left:
 
