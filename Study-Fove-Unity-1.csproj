@@ -320,6 +320,7 @@
     <Compile Include="Assets\Examples\CarSimulation\Scripts\WheelDrive.cs" />
     <Compile Include="Assets\Examples\FoveCursor\Scripts\CSVRecorder1.cs" />
     <Compile Include="Assets\Examples\FoveCursor\Scripts\FoveCursor1.cs" />
+    <Compile Include="Assets\Examples\FoveCursor\Scripts\SpinRoom.cs" />
     <Compile Include="Assets\Examples\FoveCursor\Scripts\TunneringEyeControler.cs" />
     <Compile Include="Assets\Examples\FoveCursor\Scripts\TunneringMouseControler.cs" />
     <Compile Include="Assets\Examples\LookAt\Scripts\LookAt.cs" />

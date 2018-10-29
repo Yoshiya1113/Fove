@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Examples/FoveCursor/Scenes/FoveCursorTunnering.unity
+- path: Assets/Examples/FoveCursor/Scenes/CheckerRoom.unity
   isLoaded: 1
   isActive: 1

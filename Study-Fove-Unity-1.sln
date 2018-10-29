@@ -1,15 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study-Fove-Unity-1", "Study-Fove-Unity-1.csproj", "{8AFB2747-D146-8B38-96E9-E530C9ED1658}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study-Fove-Unity-1", "Study-Fove-Unity-1.csproj", "{8AFB2747-D146-8B38-96E9-E530C9ED1658}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study-Fove-Unity-1.Editor", "Study-Fove-Unity-1.Editor.csproj", "{9777AF71-A9B6-9D5B-EF20-0D14B1112466}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study-Fove-Unity-1.Editor", "Study-Fove-Unity-1.Editor.csproj", "{9777AF71-A9B6-9D5B-EF20-0D14B1112466}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study-Fove-Unity-1.Editor", "Study-Fove-Unity-1.Editor.csproj", "{9777AF71-A9B6-9D5B-EF20-0D14B1112466}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study-Fove-Unity-1.Editor", "Study-Fove-Unity-1.Editor.csproj", "{9777AF71-A9B6-9D5B-EF20-0D14B1112466}"
 EndProject
@@ -23,22 +17,6 @@ Global
 		{8AFB2747-D146-8B38-96E9-E530C9ED1658}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AFB2747-D146-8B38-96E9-E530C9ED1658}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AFB2747-D146-8B38-96E9-E530C9ED1658}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8AFB2747-D146-8B38-96E9-E530C9ED1658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8AFB2747-D146-8B38-96E9-E530C9ED1658}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8AFB2747-D146-8B38-96E9-E530C9ED1658}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8AFB2747-D146-8B38-96E9-E530C9ED1658}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9777AF71-A9B6-9D5B-EF20-0D14B1112466}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -46,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEF82656-9CE9-4A1B-A1DB-FE5871067DC2}
 	EndGlobalSection
 EndGlobal
