@@ -6,17 +6,17 @@ using System;//タイムスタンプ用
 public class SpinRoom : MonoBehaviour {
 
     private int spintim = 0;//状態管理
+    private int n = 30;//角速度
     private DateTime spinstart;//開始時刻
     private DateTime nt;//現在時刻
     private DateTime ts;//経過時間
     private float corepathtime;
-    private float spinangle;
+    private float spinangle = 0.0f;//チェッカールームの回り具合
     
     //private string sst;//開始時刻(string型)
     //private string snt;//現在時刻(string型)
                        // Use this for initialization
-    void Start () {
-        spinstart = DateTime.Now;//実行を始めた時刻
+    void Start () {    
         ts = DateTime.Now;//経過時間代入用の変数
         String now = DateTime.Now.ToString("MMddhhmm");
     }
@@ -25,31 +25,52 @@ public class SpinRoom : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            spintim += 1;
+            spintim = 1;
+            spinstart = DateTime.Now;//実行を始めた時刻
         }
 
         if (spintim == 1)//csvへの書き込み
         {
             nt = DateTime.Now;//ここに到達したときの時刻を取得する
             TimeSpan ts = nt - spinstart;//実行からどれくらい経過しているのかを計算
-            //corepathtime = ts.ToString("FFFFFFF");
-            //transform.rotation = (0, 0, ts*90);
-            //spinangle = ts * 90;
-            //transform.localRotation = Quaternion.Euler(0.0f, ts * 90f, 0.0f);
 
-            //sst = nt.ToString();//現在時刻を文字列に変換
-            //snt = nt.ToString();//現在時刻を文字列に変換
+            //経過時刻と角速度に合わせてチェッカールームを傾ける
+            //フレーム当たりの角速度を
+            spinangle = ts.Milliseconds * n / 1000;
+            spinangle += ts.Seconds * n;
+            spinangle += ts.Minutes * n;
+            //spinangle += 0.9f;//Unityは60fpsというのを前提
+            transform.localRotation = Quaternion.Euler(0.0f, spinangle, 0.0f);
 
+            //spinstart = nt;
 
-            //Debug.Log(st);//データ確認用
-            //Debug.Log(ts);
-            //Debug.Log(nt);
+            //データ確認用
+            Debug.Log(spinstart);//回転開始時
+            Debug.Log(nt);//現在時刻
+            Debug.Log(ts);//経過時間
+            Debug.Log(ts.Milliseconds);//経過時間(ミリ秒)
+            Debug.Log(spinangle);//移動角
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            
+            spintim = 0;
             //Debug.Log("書き込み終了");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            n = 30;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            n = 60;
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            n = 90;
         }
     }
 }
