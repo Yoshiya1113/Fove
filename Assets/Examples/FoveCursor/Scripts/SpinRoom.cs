@@ -45,11 +45,11 @@ public class SpinRoom : MonoBehaviour {
             //spinstart = nt;
 
             //データ確認用
-            Debug.Log(spinstart);//回転開始時
-            Debug.Log(nt);//現在時刻
-            Debug.Log(ts);//経過時間
-            Debug.Log(ts.Milliseconds);//経過時間(ミリ秒)
-            Debug.Log(spinangle);//移動角
+            //Debug.Log(spinstart);//回転開始時
+            //Debug.Log(nt);//現在時刻
+            //Debug.Log(ts);//経過時間
+            //Debug.Log(ts.Milliseconds);//経過時間(ミリ秒)
+            //Debug.Log(spinangle);//移動角
         }
 
         if (Input.GetKeyDown(KeyCode.S))
