@@ -6,7 +6,7 @@ using System;//タイムスタンプ用
 public class SpinRoom : MonoBehaviour {
 
     private int spintim = 0;//状態管理
-    private int n = 30;//角速度
+    private float n = 30.0f;//角速度
     private DateTime spinstart;//開始時刻
     private DateTime nt;//現在時刻
     private DateTime ts;//経過時間
@@ -36,7 +36,7 @@ public class SpinRoom : MonoBehaviour {
 
             //経過時刻と角速度に合わせてチェッカールームを傾ける
             //フレーム当たりの角速度を
-            spinangle = ts.Milliseconds * n / 1000;
+            spinangle = ts.Milliseconds * n / 1000.0f;
             spinangle += ts.Seconds * n;
             spinangle += ts.Minutes * n;
             //spinangle += 0.9f;//Unityは60fpsというのを前提
@@ -60,17 +60,17 @@ public class SpinRoom : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            n = 30;
+            n = 30.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            n = 60;
+            n = 60.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            n = 90;
+            n = 90.0f;
         }
     }
 }

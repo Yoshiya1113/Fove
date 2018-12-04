@@ -5,6 +5,7 @@ using UnityEngine;
 public class GazeChange : MonoBehaviour {
     Collider mCollider;
     Light mLight;
+    public Material[] _material;
 
     // Use this for initialization
     void Start () {
@@ -12,13 +13,7 @@ public class GazeChange : MonoBehaviour {
         mLight = GetComponentInChildren<Light>();
 
         if (mCollider == null)
-            mCollider = gameObject.AddComponent<SphereCollider>();
-        if (mLight == null)
-        {
-            mLight = gameObject.AddComponent<Light>();
-            mLight.range = 5f;
-            mLight.intensity = 2f;
-        }
+            mCollider = gameObject.AddComponent<SphereCollider>();//球の当たり判定
 
     }
 	
@@ -27,11 +22,11 @@ public class GazeChange : MonoBehaviour {
         if (FoveInterface.IsLookingAtCollider(mCollider))
         {
             Debug.Log("COLLISION");
-            mLight.enabled = true;
+            this.GetComponent<Renderer>().material = _material[1];
         }
         else
         {
-            mLight.enabled = false;
+            this.GetComponent<Renderer>().material = _material[0];
         }
 
     }
