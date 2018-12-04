@@ -6,9 +6,11 @@ public class LookAt : MonoBehaviour {
 
     Collider mCollider;
     Light mLight;
+    [Tooltip("Light controlled by blinking")]
+    public Light blinkLight;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         mCollider = GetComponent<Collider>();
         mLight = GetComponentInChildren<Light>();
 
@@ -26,10 +28,11 @@ public class LookAt : MonoBehaviour {
 		if (FoveInterface.IsLookingAtCollider(mCollider))
         {
             Debug.Log("COLLISION");
-            mLight.enabled = true;
+            //mLight.enabled = true;
+            blinkLight.enabled = !blinkLight.enabled;
         } else
         {
-            mLight.enabled = false;
+            //mLight.enabled = false;
         }
 	}
 }
