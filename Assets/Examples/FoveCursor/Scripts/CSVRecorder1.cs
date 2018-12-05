@@ -47,6 +47,9 @@ public class CSVRecorder1 : MonoBehaviour {
         nt = DateTime.Now;//ここに到達したときの時刻を取得する
         TimeSpan ts = nt - st;//実行からどれくらい経過しているのかを計算
 
+        //目のデータの取得
+        FoveInterface.EyeRays eyes = FoveInterface.GetEyeRays();
+
         //HMD関連のデータの取得
         hmdpos = FoveInterface.GetHMDPosition();//HMDの位置座標
         hmdrot = FoveInterface.GetHMDRotation();//HMDの方向座標
@@ -62,6 +65,8 @@ public class CSVRecorder1 : MonoBehaviour {
             //CSVに記録する情報
             //現在時刻，現在時刻のミリ秒，経過時間，経過時間のミリ秒，チェッカールームの回転速度，眼球の座標(左)，眼球の座標(右)，視線のベクトル(左)，視線のベクトル(右)，HMDの座標，HMDの向き
             streamWriter.Write(nt.ToString() + ',' + nt.Millisecond.ToString() + ',' + ts.ToString() + ',' + nt.Millisecond.ToString() + ','
+                + eyes.right.origin.x.ToString() + ',' + eyes.right.origin.y.ToString() + ',' + eyes.right.origin.z.ToString() + ','
+                + eyes.left.origin.x.ToString() + ',' + eyes.left.origin.y.ToString() + ',' + eyes.left.origin.z.ToString() + ','
                 + hmdpos.x.ToString() + ',' + hmdpos.y.ToString() + ',' + hmdpos.z.ToString() + ','
                 + hmdrot.x.ToString() + ',' + hmdrot.y.ToString() + ',' + hmdrot.z.ToString() + ',' + hmdrot.w.ToString());//csvに書き込むデータのリスト
             streamWriter.WriteLine();//データの取得

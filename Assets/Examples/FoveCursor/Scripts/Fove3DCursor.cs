@@ -11,6 +11,7 @@ public class Fove3DCursor : MonoBehaviour {
     private Vector3 eyeleftdistance;//左目から見たトンネリングの座標
     private Vector3 eyetunnering;//トンネリングの座標
     private Vector3 eyedistance;//両目から見たトンネリングの座標
+    private float kyori;
 
     private float root10 = 3.162f;
 
@@ -38,7 +39,10 @@ public class Fove3DCursor : MonoBehaviour {
                     eyelefttunnering = eyes.left.origin + eyeleftdistance;//右目の座標と合わせることでトンネリングの正しい位置を出す
                     eyetunnering = (eyerighttunnering + eyelefttunnering) / 2;//両目のトンネリング座標から、間の座標を出す
                     transform.position = eyetunnering;//座標に移動
-                    Debug.Log(eyetunnering.x.ToString() + '+' + eyetunnering.y.ToString() + '+' + eyetunnering.z.ToString());
+                    //Debug.Log(eyetunnering.x.ToString() + '+' + eyetunnering.y.ToString() + '+' + eyetunnering.z.ToString());
+                    //kyori = eyetunnering.x * eyetunnering.x + eyetunnering.y * eyetunnering.y + eyetunnering.z * eyetunnering.z;
+                    //Debug.Log(kyori.ToString());
+
                 }
                 else
                 {
@@ -53,7 +57,7 @@ public class Fove3DCursor : MonoBehaviour {
                     eyerightdistance = eyes.right.direction * root10;//右目から見たトンネリングの座標を計算
                     eyerighttunnering = eyes.right.origin + eyerightdistance;//右目の座標と合わせることでトンネリングの正しい位置を出す
                     transform.position = eyerighttunnering;//指定座標に移動
-                    Debug.Log(eyerighttunnering.x.ToString() + '+' + eyerighttunnering.y.ToString() + '+' + eyerighttunnering.z.ToString());
+                    //Debug.Log(eyerighttunnering.x.ToString() + '+' + eyerighttunnering.y.ToString() + '+' + eyerighttunnering.z.ToString());
                 }
                 else
                 {
@@ -68,7 +72,7 @@ public class Fove3DCursor : MonoBehaviour {
                     eyeleftdistance = eyes.left.direction * root10;//右目から見たトンネリングの座標を計算
                     eyelefttunnering = eyes.left.origin + eyeleftdistance;//右目の座標と合わせることでトンネリングの正しい位置を出す
                     transform.position = eyelefttunnering;//指定座標に移動
-                    Debug.Log(eyelefttunnering.x.ToString() + '+' + eyelefttunnering.y.ToString() + '+' + eyelefttunnering.z.ToString());
+                    //Debug.Log(eyelefttunnering.x.ToString() + '+' + eyelefttunnering.y.ToString() + '+' + eyelefttunnering.z.ToString());
                 }
                 else
                 {
