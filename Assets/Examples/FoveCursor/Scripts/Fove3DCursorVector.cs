@@ -39,13 +39,15 @@ public class Fove3DCursorVector : MonoBehaviour {
                 {
                     origineye = (eyes.left.origin + eyes.right.origin) / 2;//眼球の中間の座標を求める
                     originvector = (FoveInterface.GetLeftEyeVector() + FoveInterface.GetRightEyeVector()) / 2;//両目のベクトルの平均を求める
-                    tunneringpos = root10 * originvector + origineye;//眼球の座標と大きさ10のベクトルでトンネリングの座標を求める
+                    //origineye = eyes.right.origin;//右目の座標を求める
+                    //originvector = FoveInterface.GetRightEyeVector();//右目のベクトルの平均を求める
+                    tunneringpos = root10 * originvector - origineye;//眼球の座標と大きさ10のベクトルでトンネリングの座標を求める
                     transform.position =　tunneringpos;//トンネリングを移動
 
-                    kyori = tunneringpos.x * tunneringpos.x + tunneringpos.y * tunneringpos.y + tunneringpos.z * tunneringpos.z;
-                    Debug.Log(origineye.ToString());
+                    //kyori = tunneringpos.x * tunneringpos.x + tunneringpos.y * tunneringpos.y + tunneringpos.z * tunneringpos.z;
+                    /*Debug.Log(origineye.ToString());
                     Debug.Log(originvector.ToString());
-                    Debug.Log(tunneringpos.ToString());
+                    Debug.Log(tunneringpos.ToString());*/
                     //Debug.Log(tunneringpos.x.ToString() + ":" + tunneringpos.y.ToString() + ":" + tunneringpos.z.ToString() + ":" + kyori.ToString());
 
                 }
@@ -66,11 +68,11 @@ public class Fove3DCursorVector : MonoBehaviour {
                 {
                     origineye = eyes.right.origin;//右目の座標を求める
                     originvector = FoveInterface.GetRightEyeVector();//右目のベクトルの平均を求める
-                    tunneringpos = root10 * originvector + origineye;//眼球の座標と大きさ10のベクトルでトンネリングの座標を求める
+                    tunneringpos = root10 * originvector - origineye;//眼球の座標と大きさ10のベクトルでトンネリングの座標を求める
                     transform.position = tunneringpos;//トンネリングを移動
 
-                    kyori = tunneringpos.x * tunneringpos.x + tunneringpos.y * tunneringpos.y + tunneringpos.z * tunneringpos.z;
-                    Debug.Log(tunneringpos.x.ToString() + ":" + tunneringpos.y.ToString() + ":" + tunneringpos.z.ToString() + ":" + kyori.ToString());
+                    //kyori = tunneringpos.x * tunneringpos.x + tunneringpos.y * tunneringpos.y + tunneringpos.z * tunneringpos.z;
+                    //Debug.Log(tunneringpos.x.ToString() + ":" + tunneringpos.y.ToString() + ":" + tunneringpos.z.ToString() + ":" + kyori.ToString());
 
 
                 }
@@ -91,11 +93,11 @@ public class Fove3DCursorVector : MonoBehaviour {
                 {
                     origineye = eyes.left.origin;//左目の座標を求める
                     originvector = FoveInterface.GetLeftEyeVector();//左目のベクトルの平均を求める
-                    tunneringpos = root10 * originvector + origineye;//眼球の座標と大きさ10のベクトルでトンネリングの座標を求める
+                    tunneringpos = root10 * originvector - origineye;//眼球の座標と大きさ10のベクトルでトンネリングの座標を求める
                     transform.position = tunneringpos;//トンネリングを移動
 
-                    kyori = tunneringpos.x * tunneringpos.x + tunneringpos.y * tunneringpos.y + tunneringpos.z * tunneringpos.z;
-                    Debug.Log(tunneringpos.x.ToString() + ":" + tunneringpos.y.ToString() + ":" + tunneringpos.z.ToString() + ":" + kyori.ToString());
+                    //kyori = tunneringpos.x * tunneringpos.x + tunneringpos.y * tunneringpos.y + tunneringpos.z * tunneringpos.z;
+                    //Debug.Log(tunneringpos.x.ToString() + ":" + tunneringpos.y.ToString() + ":" + tunneringpos.z.ToString() + ":" + kyori.ToString());
 
 
                 }

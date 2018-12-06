@@ -15,6 +15,9 @@ public class CSVRecorder1 : MonoBehaviour {
     private int tf = 0;//
     private Vector3 hmdpos;
     private Quaternion hmdrot;
+    private int frameCount;//fps計算用
+    private float prevTime;//fps計算用
+    private float fpstime;//fps計算用
 
     //RaycastHit[] righthits;//右目の当たった座標の格納
     //RaycastHit[] lefthits;//左目の当たった座標の格納
@@ -22,6 +25,8 @@ public class CSVRecorder1 : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        Application.targetFrameRate = 60;
+
         st = DateTime.Now;//実行を始めた時刻
         ts = DateTime.Now;//経過時間代入用の変数
         String now = DateTime.Now.ToString("MMddhhmm");
@@ -39,6 +44,9 @@ public class CSVRecorder1 : MonoBehaviour {
             + ',' + "hitlX" + ',' + "hitlY" + ',' + "hitlZ");
         streamWriter.WriteLine();//csvに取得したデータを書き込む
 
+        frameCount = 0;
+        prevTime = 0.0f;
+
     }
 	
 	// Update is called once per frame
@@ -46,6 +54,17 @@ public class CSVRecorder1 : MonoBehaviour {
         //時間関連データの取得
         nt = DateTime.Now;//ここに到達したときの時刻を取得する
         TimeSpan ts = nt - st;//実行からどれくらい経過しているのかを計算
+
+        //fpsの計算
+        ++frameCount;
+        float time = Time.realtimeSinceStartup - prevTime;
+        if (time >= 0.5f)
+        {
+            fpstime = frameCount / time;
+            //Debug.LogFormat("{0}fps", fpstime);
+            frameCount = 0;
+            prevTime = Time.realtimeSinceStartup;
+        }
 
         //目のデータの取得
         FoveInterface.EyeRays eyes = FoveInterface.GetEyeRays();
@@ -63,7 +82,7 @@ public class CSVRecorder1 : MonoBehaviour {
         if (tf == 1)//csvへの書き込み
         {
             //CSVに記録する情報
-            //現在時刻，現在時刻のミリ秒，経過時間，経過時間のミリ秒，チェッカールームの回転速度，眼球の座標(左)，眼球の座標(右)，視線のベクトル(左)，視線のベクトル(右)，HMDの座標，HMDの向き
+            //現在時刻，現在時刻のミリ秒，経過時間，経過時間のミリ秒，fps，チェッカールームの回転速度，眼球の座標(左)，眼球の座標(右)，視線のベクトル(左)，視線のベクトル(右)，HMDの座標，HMDの向き
             streamWriter.Write(nt.ToString() + ',' + nt.Millisecond.ToString() + ',' + ts.ToString() + ',' + nt.Millisecond.ToString() + ','
                 + eyes.right.origin.x.ToString() + ',' + eyes.right.origin.y.ToString() + ',' + eyes.right.origin.z.ToString() + ','
                 + eyes.left.origin.x.ToString() + ',' + eyes.left.origin.y.ToString() + ',' + eyes.left.origin.z.ToString() + ','
