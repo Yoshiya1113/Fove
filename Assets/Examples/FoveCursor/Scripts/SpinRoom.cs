@@ -150,7 +150,7 @@ public class SpinRoom : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            n = 30.0f;
+            n = 180.0f;
         }
 
         if (Input.GetKeyDown(KeyCode.X))
